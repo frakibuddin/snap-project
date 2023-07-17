@@ -1,0 +1,233 @@
+/* .hero-section {
+  padding: 3rem 0;
+} */
+.hero-section .carousel-item {
+  min-height: 80rem;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .carousel-item .wapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.hero-section .carousel-item h2 {
+  font-size: 4.5rem;
+  color: #444444;
+  margin: 0 0 10px;
+  opacity: 0;
+}
+.hero-section .carousel-item p {
+  font-size: 2.2rem;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  color: #444444;
+  opacity: 0;
+}
+
+.hero-section .carousel-item.active h2 {
+  animation: fadeInLeft 0.5s ease forwards;
+}
+
+.hero-section .carousel-item.active p {
+  animation: fadeInRight 0.5s ease forwards;
+}
+.slider-content {
+  align-items: center;
+  margin-top: 7rem;
+  background: radial-gradient(rgba(255, 255, 255, 0.603), transparent);
+}
+
+/* hexa-image */
+.slider-text {
+  text-align: left;
+}
+.hero-hexa-img {
+  width: 41rem;
+  height: 24rem;
+  position: relative;
+  z-index: 1;
+  transform: scale(0);
+  background: rgba(255, 255, 255, 0.589);
+}
+
+.hero-section .carousel-item.active .hero-hexa-img {
+  animation: popUp 0.5s ease forwards;
+}
+
+.hero-hexa-img::before,
+.hero-hexa-img::after,
+.hero-hexa-img img {
+  content: "";
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  display: block;
+  position: absolute;
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: -1;
+}
+.hero-hexa-img img {
+  width: 100%;
+  height: 200%;
+  object-fit: cover;
+}
+.hero-hexa-img::before {
+  background: #ef745288;
+  transform: scale(1.08);
+}
+/* hexa-icon */
+.hero-hexa-img-inner {
+  text-align: center;
+  position: relative;
+  transform: translateX(4rem);
+}
+.hexagon-icon {
+  position: absolute;
+  z-index: 9;
+  width: 6rem;
+  height: 7rem;
+  background: #ef7552;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: 0.3s;
+  transform: scale(0);
+}
+.hero-section .carousel-item.active .hexagon-icon {
+  animation: popUp 0.6s ease forwards;
+}
+.hexa-i-1 {
+  left: 22%;
+  top: -60%;
+}
+.hexa-i-2 {
+  left: 60%;
+  top: -12rem;
+  opacity: 0.5;
+}
+.hexa-i-3 {
+  width: 4.5rem;
+  height: 5.5rem;
+  top: 90%;
+  left: -4%;
+}
+.hexa-i-4 {
+  width: 4.8rem;
+  height: 5.8rem;
+  bottom: -46%;
+  left: 2%;
+}
+.hexa-i-5 {
+  width: 2rem;
+  height: 2.3rem;
+  bottom: -47%;
+  left: 15%;
+}
+.hexa-i-6 {
+  width: 2rem;
+  height: 2.3rem;
+  bottom: -66%;
+  left: 20%;
+}
+.hexa-i-7 {
+  width: 4rem;
+  height: 4.5rem;
+  bottom: -54%;
+  right: 50%;
+  opacity: 0.5;
+}
+.hexa-i-8 {
+  width: 4rem;
+  height: 4.5rem;
+  bottom: -54%;
+  right: 30%;
+  opacity: 0.5;
+}
+.hexa-i-9 {
+  width: 2rem;
+  height: 2.3rem;
+  top: 7%;
+  right: 20%;
+  opacity: 0.5;
+}
+.hexa-i-10 {
+  width: 2rem;
+  height: 2.3rem;
+  top: -23%;
+  left: 0%;
+}
+.hexa-i-11 {
+  width: 3.5rem;
+  height: 4rem;
+  top: -50%;
+  left: 6%;
+}
+@keyframes popUp {
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.hero-section .carousel-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.hero-section .carousel-indicators {
+  position: relative;
+  margin: 0;
+}
+
+.hero-section .carousel-indicators li {
+  height: 0.8rem;
+  width: 4rem;
+  margin: 0 5px;
+  border-radius: 0.5rem;
+  background-position: center;
+  background-size: cover;
+  border: 0.3rem solid transparent;
+  transition: all 0.3s ease;
+  background-color: #888888;
+}
+.hero-section .carousel-indicators li.active {
+  background-color: #ef7552;
+}
